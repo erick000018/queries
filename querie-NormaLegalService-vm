@@ -1969,7 +1969,7 @@ public class NormaLegalService implements INormaLegalService {
 
 
 
-    
+
 	@Override
 	public ResultadoDTO validarNormaLegalDesfasa(NormaLegalRequest normaLegalRequest, String codigoUsuario) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constant.FORMAT_TIME_DDMMYYY);
@@ -2888,7 +2888,7 @@ public class NormaLegalService implements INormaLegalService {
             }
             resultadoDTO.setResultado("Los Datos se guardaron correctamente");
         }
-        if (normaLegalRequest.getAccion() == 7) {//Acción: Derogar Parcial
+        if (normaLegalRequest.getAccion() == 7) {//Acción: Derogar Parcial validador
             MaeTipoMovimiento tipoMovimiento = maeTipoMovimientoRepository.findById(Constant.DEROGAR_PARCIAL).orElseThrow(() -> new RuntimeException(Constant.TEXTO_ESTADO_NO_ENCONTRADO));
             MaeTipoMovimiento tipoMovimientoNuevo = maeTipoMovimientoRepository.findById(Constant.NUEVO).orElseThrow(() -> new RuntimeException(Constant.TEXTO_ESTADO_NO_ENCONTRADO));
             List<MovNormaLegalDelito> normaLegalDelitoList = normaLegalRepository.normaLegalDelitos(normaLegalRequest.getDecretoId(), normaLegalRequest.getDelitoId());
@@ -3232,8 +3232,8 @@ public class NormaLegalService implements INormaLegalService {
         return resultadoDTO;
 	}
 
-   
-    
+
+
 
     @Override
     public ResultadoDTO guardarFeNormasLegales(NormaLegalRequest normaLegalRequest) {
