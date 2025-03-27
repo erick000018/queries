@@ -1984,7 +1984,7 @@ public class NormaLegalService implements INormaLegalService {
             idnormaLegalDelito = 1L;
         }
 
-        if (normaLegalRequest.getAccion() == 3) {//Acción: Incorporar
+        if (normaLegalRequest.getAccion() == 3) {//Acción: Incorporar validador
             MaeEstadoDelito estadoDelitoAprobado = maeEstadoDelitoRepository.findById(Constant.APROBAR_NUEVO).orElseThrow(() -> new RuntimeException(Constant.TEXTO_ESTADO_NO_ENCONTRADO));
             MaeTipoMovimiento tipoMovimiento = maeTipoMovimientoRepository.findById(Constant.INCORPORAR).orElseThrow(() -> new RuntimeException(Constant.TEXTO_ESTADO_NO_ENCONTRADO));
 
@@ -2293,7 +2293,7 @@ public class NormaLegalService implements INormaLegalService {
             }
             resultadoDTO.setResultado("Los Datos se guardaron correctamente");
         }
-        if (normaLegalRequest.getAccion() == 6) {//Acción: Derogar Total
+        if (normaLegalRequest.getAccion() == 6) {//Acción: Derogar Total validador
             MaeTipoMovimiento tipoMovimiento = maeTipoMovimientoRepository.findById(Constant.DEROGAR_TOTAL).orElseThrow(() -> new RuntimeException(Constant.TEXTO_ESTADO_NO_ENCONTRADO));
             normaLegalDelito = normaLegalRepository.normaLegalDelito(normaLegalRequest.getDecretoId(), normaLegalRequest.getDelitoId());
             MovDelito movDelito = articuloRepository.findById(normaLegalRequest.getDelitoId()).orElseThrow(() -> new RuntimeException(Constant.TEXTO_DELITO_NO_ENCONTRADO));
@@ -2347,7 +2347,7 @@ public class NormaLegalService implements INormaLegalService {
             }
             resultadoDTO.setResultado("Los Datos se guardaron correctamente");
         }
-        if (normaLegalRequest.getAccion() == 4) {//Acción: Reubicar
+        if (normaLegalRequest.getAccion() == 4) {//Acción: Reubicar validador
             MaeTipoMovimiento tipoMovimiento = maeTipoMovimientoRepository.findById(Constant.REUBICAR).orElseThrow(() -> new RuntimeException(Constant.TEXTO_ESTADO_NO_ENCONTRADO));
             MaeTipoMovimiento tipoMovimientoNuevo = maeTipoMovimientoRepository.findById(Constant.NUEVO).orElseThrow(() -> new RuntimeException(Constant.TEXTO_ESTADO_NO_ENCONTRADO));
             normaLegalDelito = normaLegalRepository.normaLegalDelito(normaLegalRequest.getDecretoId(), normaLegalRequest.getDelitoId());
@@ -2554,7 +2554,7 @@ public class NormaLegalService implements INormaLegalService {
             }
             resultadoDTO.setResultado("Los Datos se guardaron correctamente");
         }
-        if (normaLegalRequest.getAccion() == 2) {//Acción: Modificar
+        if (normaLegalRequest.getAccion() == 2) {//Acción: Modificar validador
             MaeTipoMovimiento tipoMovimiento = maeTipoMovimientoRepository.findById(Constant.MODIFICAR).orElseThrow(() -> new RuntimeException(Constant.TEXTO_ESTADO_NO_ENCONTRADO));
             normaLegalDelito = normaLegalRepository.normaLegalDelito(normaLegalRequest.getDecretoId(), normaLegalRequest.getDelitoId());
             MovDelito movDelito = articuloRepository.findById(normaLegalRequest.getDelitoId()).orElseThrow(() -> new RuntimeException(Constant.TEXTO_DELITO_NO_ENCONTRADO));
